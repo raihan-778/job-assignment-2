@@ -5,24 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/26cfe8fa76.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>Food-hub</title>
   </head>
   <body>
     <nav>
-      <ul>
+      <ul class="menu-large">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <i class="fa-solid fa-bars menu-toggle"></i>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <header>
       <div class="hero">
-        <!-- <img src="img/banner2.jpg" alt="Hero Image" /> -->
-        <h1>Welcome to Our Restaurant</h1>
+        <div class="hero-content">
+          <h1>
+            Discover the Tastiest Treats at Food Hub - Your Neighborhood's
+            Culinary Destination!
+          </h1>
+          <div class="hero-btn">
+            <button>Order Now</button>
+            <button>Our Menu</button>
+          </div>
+        </div>
       </div>
-      <div class="overlay"></div>
     </header>
 
     <!-- carousel start-->

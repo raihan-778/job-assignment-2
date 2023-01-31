@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .root {
   --primary: #fdfffc;
@@ -8,18 +10,25 @@
   --secondery: #00425a;
   --accent: #243763;
 }
-body {
-  max-width: 1440px;
-  margin: auto;
-}
 
 /* code for navigation manu */
+
+button {
+  background-color: #ff006e;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
 
 nav {
   width: 100vw;
   margin: 0 auto;
   background: #00425a;
   height: 80px;
+  position: relative;
+  border-radius: 10px;
 }
 nav ul {
   display: flex;
@@ -29,7 +38,7 @@ nav ul {
   justify-content: center;
   align-items: center;
 }
-.nav li {
+nav li {
   height: 30px;
 }
 nav a {
@@ -43,47 +52,89 @@ nav a {
   padding: 20px;
   text-decoration: none;
 }
+/* css for responsiv menu*/
+.fa-solid.fa-bars {
+  font-size: 30px;
+  color: white;
+  display: none;
+}
+
+.nav-links {
+  display: none;
+  left: -20px;
+  top: 0;
+  transition: 0.3 ease-in-out;
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 105%;
+  z-index: 20;
+  background-color: #ea047e;
+  padding: 20px 10px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
 /* Code for hero banner */
 .hero {
   background-image: url("../img/banner1.jpg");
   background-size: cover;
+  position: relative;
   height: 500px;
   display: flex;
   background-clip: var(--accent);
-
+  margin: 3rem 1rem;
   justify-content: center;
   align-items: center;
   background-color: blue;
+  border-radius: 20px;
+  z-index: 1;
 }
-header {
-  position: relative;
-}
-.overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
+.hero::before {
+  position: absolute;
+  content: "";
+  background-color: #000;
+  opacity: 30%;
+  width: 100%;
+  height: 100%;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
-.hero h1 {
-  color: rgb(245, 241, 241);
-  font-size: 48px;
-  text-shadow: 1px 1px #000;
-  background-color: slategrey;
+  top: 0;
+  border-radius: 20px;
+  z-index: -1;
 }
 
+.hero h1 {
+  color: rgb(253, 246, 241);
+  font-size: 48px;
+  text-shadow: 1px 1px #000;
+}
+.hero-content {
+  width: 70%;
+}
+.hero-btn {
+  margin-top: 2rem;
+}
+hero-btn butron {
+  transition: 0.3 all ease-in-out;
+}
+.hero-btn button:hover,
+.hero-btn button:focus {
+  background: transparent;
+  border-color: #ea047e;
+  color: white;
+}
 /* code for carousel */
 
 .slider-wrapper {
-  margin: 1rem;
+  margin: 3rem 1rem;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .slides-container {
@@ -154,4 +205,25 @@ header {
 .slide:nth-child(4) {
   background-color: #da6f2b;
   margin: 0;
+}
+/* Media query Css */
+/* Set the background color of body to tan */
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .fa-solid.fa-bars {
+    display: block;
+    margin: auto 0;
+    padding: 10px;
+  }
+  .menu-large {
+    display: none;
+  }
+  .slide img {
+    height: 70%;
+  }
 }

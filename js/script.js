@@ -1,11 +1,12 @@
 // Add toggle button for small screens
 console.log("javascript is conntected");
-// let menuToggle = document.querySelector(".menu-toggle");
-// let navLinks = document.querySelector(".nav-links");
+let menuToggle = document.querySelector(".menu-toggle");
+let navLinks = document.querySelector(".nav-links");
 
-// menuToggle.addEventListener("click", () => {
-//   navLinks.classList.toggle("open");
-// });
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  console.log("toggle clicked");
+});
 
 // code for  Carousel
 const slidesContainer = document.getElementById("slides-container");
